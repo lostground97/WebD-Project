@@ -6,6 +6,16 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
 	<link rel="stylesheet" href="main.css">
+	<script type="text/javascript">
+		function submitBday() {
+	    var Q4A = "Your birthday is: ";
+	    var Bdate = document.getElementById('dob').value;
+	    var Bday = +new Date(Bdate);
+	    Q4A = ~~ ((Date.now() - Bday) / (31557600000));
+	    var theBday = document.getElementById('age');
+	    theBday.value = Q4A;
+		}
+	</script>
 </head>
 <body>
 	<ul class="navigation">
@@ -64,10 +74,15 @@
 				</label>
                                         <label for="dob">
 					<span>Date of Birth</span>
-					<input type="date" name="dob" id="dob" minlength="3"  placeholder = "XX/YY/ZZ" required >
+					<input type="date" name="dob" id="dob" required onchange="submitBday()" >
 			
 				</label><br>
 				<br>
+				<label for="age">
+					<span>Age </span>
+					<input type="text" name="age" id="age" readonly>
+				</label>
+				<br><br>
 				<label for="gender">
 					<span>Gender</span>
 					<input type="radio" name="gender" value="male" checked> Male
@@ -81,6 +96,9 @@
 						<li>Enter a valid number</li>
 					</ul>
 				</label>
+			</div>
+			<div class="registration" style="float: right;">
+				<h3>Educational Details</h3>
 				<label for="address">
 					<span>Address</span>
 					<input type="text" name="address" id="address" minlength="3" required>
@@ -88,9 +106,6 @@
 						<li>At least 3 characters long</li>
 					</ul>
 				</label>
-			</div>
-			<div class="registration" style="float: right;">
-				<h3>Educational Details</h3>
 				<label for="registration">
 					<span>Registration Number</span>
 					<input type="text" name="registration" minlength="8" required>
@@ -122,10 +137,14 @@
 					    <option value="8">8</option>
 					</select>
 				</p>
+				<label for="hobbies">
+					<span>Hobbies</span>
+					<input type="text" name="hobbies" id="hobbies" minlength="3" required>
+				</label>
 				<hr>
 				<br><br>
 			</div>
-			<input type="submit" class="btn" style="margin-top: 80px;">
+			<input type="submit" class="btn" style="margin-top: 80px; margin-left: 250px;">
 		</form>
 	</div>
 
