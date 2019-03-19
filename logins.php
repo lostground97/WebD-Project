@@ -3,18 +3,18 @@
 $host="localhost"; // Host name 
 $username="root"; // Mysql username 
 $password=""; // Mysql password 
-$db_name="student"; // Database name 
-$tbl_name="data"; // Table name 
+$db_name="data"; // Database name 
+$tbl_name="student"; // Table name 
 
 // Connect to server and select database.
 $con = mysqli_connect("$host", "$username", "$password")or die("cannot connect"); 
 mysqli_select_db($con,"$db_name")or die("cannot select DB");
 
-$uname = mysqli_escape_string($con, $_POST['username']);
-$pass = mysqli_escape_string($con, $_POST['password']);
+$uname = mysqli_escape_string($con, ($_POST['username']));
+$pass = mysqli_escape_string($con, ($_POST['password']));
 
 // Insert data into mysql 
-$query = "SELECT * FROM data WHERE username LIKE '%$uname%' and password LIKE '%$pass%'";
+$query = "SELECT * FROM student WHERE username LIKE '%$uname%' and password LIKE '%$pass%'";
 $result=mysqli_query($con,$query);
 
 

@@ -4,22 +4,22 @@ session_start();
 $host="localhost"; // Host name 
 $username="root"; // Mysql username 
 $password=""; // Mysql password 
-$db_name="student"; // Database name 
-$tbl_name="data"; // Table name 
+$db_name="data"; // Database name 
+$tbl_name="student"; // Table name 
 
 // Connect to server and select database.
 $con = mysqli_connect("$host", "$username", "$password")or die("cannot connect"); 
 mysqli_select_db($con,"$db_name")or die("cannot select DB");
 
 $var = $_SESSION['login_user'];
-$q = "select * from data where username = '$var'";
+$q = "select * from student where username = '$var'";
 
-$query = mysqli_query($con,$q);
-if (!$query) {
+$result = mysqli_query($con,$q);
+if (!$result) {
   printf("Error: %s\n", mysqli_error($con));
   exit();
 }
-$table1 = mysqli_fetch_array($query);
+$table1 = mysqli_fetch_array($result);
 
 
 
@@ -160,7 +160,9 @@ if ($query->num_rows > 0)
 				  <br>
 				  <br>
 			</div>
+		
 	</div>
+	
   <script src="script.js"></script>
 </body>
 </html>
