@@ -190,8 +190,17 @@ if($_GET['submit']){
 	$username = $_GET['username'];
 	$uname = $_GET['uname'];
 	$father = $_GET['father'];
-	$roll = $_GET['roll'];
-	$q= "update student set uname='$uname ', father='$father', roll='$roll' where username='$username' ";
+	$dob = $_GET['dob'];
+	$gender = $_GET['gender'];
+	$email = $_GET['email'];
+    $contact =$_GET['contact'];
+	$address = $_GET['address'];
+    $registration =$_GET['registration'];
+	$dept = $_GET['dept'];
+    $roll =$_GET['roll'];
+    $hobbies =$_GET['hobbies'];
+
+	$q= "update student set uname='$uname ', father='$father', roll='$roll', dob='$dob',gender='$gender',email='$email',contact='$contact',registration='$registration',dept='$dept',hobbies='$hobbies' where username='$username' ";
     $data = mysqli_query($con, $q);
 	if($data)
 	{ 
