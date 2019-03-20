@@ -42,13 +42,14 @@
           <br>
           <input class="btn" type="submit" style="margin-left: 35%;">
           <br>
-          <a href="./reg.html">Don't have account, Make one!!</a>
+          <a href="./reg.html">Don't have account, Make one!!</a><br>
+		  <a href="./forgot_pswd.html">Forgot Password!!</a>
         </div>
       </form>
     </div>
     <div style="float: right; margin-right:15%; margin-left:auto;">
       <h1>Admin Login</h1>
-      <form class="login" id="registration1">
+      <form class="login" id="registration1"  method = 'POST' action = 'adminlogin.php'>
         <label for="username1">
           <span>Username</span>
           <input type="text" name="username1" id="username1" minlength="3" required>
