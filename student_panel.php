@@ -12,7 +12,8 @@ $con = mysqli_connect("$host", "$username", "$password")or die("cannot connect")
 mysqli_select_db($con,"$db_name")or die("cannot select DB");
 
 $var = $_SESSION['login_user'];
-$q = "select * from student where username = '$var'";
+
+$q = "select * from student where username = '$var' and status=1";
 
 $result = mysqli_query($con,$q);
 if (!$result) {
@@ -26,16 +27,27 @@ $table1 = mysqli_fetch_array($result);
 $uname = $table1[0];
 $name = $table1[2];
 $father = $table1[3];
-$email = $table1[4];
-$dob = $table1[5];
-$age = $table1[6];
-$gender = $table1[7];
+$email = $table1[7];
+$dob = $table1[4];
+$age = $table1[5];
+$gender = $table1[6];
 $contact = $table1[8];
 $address = $table1[9];
 $rnumber = $table1[10];
 $dept = $table1[11];
 $roll = $table1[12];
 $hobbies = $table1[13];
+$status = $table1[14];
+if($status==0)
+{
+	 echo "<script>
+    alert('This user has not been approved by Admin');
+    window.location.href='login.html';
+    </script>";
+    exit();
+}
+
+
 /*
 if ($query->num_rows > 0)
 {

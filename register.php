@@ -40,7 +40,7 @@ $age = mysqli_escape_string($con, ($_POST['age']));
 
 // Insert data into mysql 
 $query = "insert into student values('$username', '$password', '$uname', '$father','$dob', '$age', 
- '$gender', '$email', '$contact', '$address', '$registration', '$dept', '$roll','$hobbies');";
+ '$gender', '$email', '$contact', '$address', '$registration', '$dept', '$roll','$hobbies', 0);";
 
 $result=mysqli_query($con,$query);
 
