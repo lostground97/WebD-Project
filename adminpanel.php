@@ -1,12 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <title>Student Information System</title>
+  <meta charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <ul class="navigation">
+        <li><a>Student Information System</a></li>
+        <li style="padding-left: 50%;"><a href="index.html">Home</a></li>
+        <li><a href="login.html">Login</a></li>
+        <li><a href="./reg.html">Register Yourself</a></li>
+        <!-- <li><a href="#">About</a></li>
+        <li><a href="#">Contact</a></li> -->
+    </ul>
+	<div class="container0">
+		<h1>Admin Panel</h1>
+		</div>
 <style>
 td{
-	padding: 8px;
+	padding: 1px;
+}
+table, th, td {
+  border: 0.5px solid black;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+th {
+  background-color: pink;
+  color: white;
 }
 </style>
 
-
-
-
+<br><br>
 <?php
 session_start();
 error_reporting(0);
@@ -20,7 +50,7 @@ $tbl_name="student"; // Table name
 $con = mysqli_connect("$host", "$username", "$password")or die("cannot connect"); 
 mysqli_select_db($con,"$db_name")or die("cannot select DB");
 
-$q = "select * from student";
+$q = "select * from student where status=1";
 $data = mysqli_query($con, $q);
 
 $total = mysqli_num_rows($data);
@@ -29,6 +59,7 @@ $total = mysqli_num_rows($data);
 if($total!=0)
 {
 	?>
+	<div style="overflow-x:auto;">
 	<table>
 	<tr>
 	<th>Username</th>
@@ -45,6 +76,7 @@ if($total!=0)
 	<th>dept</th>
 	<th>roll</th>
 	<th>hobbies</th>
+	
 	<th colspan="2">Operations</th>
 	</tr>
 	
@@ -79,5 +111,8 @@ else
 
 ?>
 </table>
-
+</div>
+ <a href="./admin.php">View Pending Requests</a><br>
+</body>
+</html>
 

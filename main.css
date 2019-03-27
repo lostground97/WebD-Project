@@ -77,7 +77,10 @@ a {
     text-decoration: underline;
     color: inherit; 
 }
-    
+    .container0 {
+    margin: 20px auto;
+    width: 80%;
+}
 .container {
     margin: 80px auto;
     width: 90%;
