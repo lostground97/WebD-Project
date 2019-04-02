@@ -27,10 +27,7 @@ if (mysqli_num_rows($result) > 0) {
 } 
 
 else{
-    echo "<script>
-    alert('Invald Username or Password');
-    window.location.href='login.html';
-    </script>";
+    header("Location: login_stud.html"); /* Redirect browser */
     exit();
 }
 
