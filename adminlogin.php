@@ -29,7 +29,8 @@ session_start();
 } 
 
 else{
-    echo "unsuccessful";
+    header("Location: login_admin.html"); /* Redirect browser */
+    exit();
 }
 
 ?>
